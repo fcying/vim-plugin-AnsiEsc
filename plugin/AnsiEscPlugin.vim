@@ -14,6 +14,7 @@ set cpo&vim
 " ---------------------------------------------------------------------
 "  Public Interface: {{{1
 com! -bang -nargs=0 AnsiEsc	:call AnsiEsc#AnsiEsc(<bang>0)
+com! -nargs=0 AnsiEscClear	:call AnsiEsc#AnsiEscClear()
 
 au BufReadPost * :call AnsiEsc#BufReadPost()
 

@@ -26,6 +26,15 @@ let s:keepcpo= &cpo
 set cpo&vim
 
 " ---------------------------------------------------------------------
+fun! AnsiEsc#AnsiEscClear()
+  let bn= bufnr("%")
+  if exists("s:AnsiEsc_enabled_{bn}")
+    if s:AnsiEsc_enabled_{bn}
+      call AnsiEsc#AnsiEsc(0)
+    endif
+  endif
+endfunction
+
 " AnsiEsc#AnsiEsc: toggles ansi-escape code visualization {{{2
 fun! AnsiEsc#AnsiEsc(rebuild)
 "  call Dfunc("AnsiEsc#AnsiEsc(rebuild=".a:rebuild.")")
